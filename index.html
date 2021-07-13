@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizzApp</title>
-    <link rel="stylesheet" href=style.css>
-    <script src="script.js">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizzApp</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="script.js">
+  </script>
 
-    </script>
+  <!--Bootstrap file -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
 </head>
-<body>
 
-    <span>Hello</span>
-    <button>Nothing here</button>
-    
+<body onload="init()">
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">QuizzApp</span>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="card quiz-card">
+      <img src="img/background.jpg" class="card-img-top" id="header-image">
+      
+      <div class="progress">
+        <div class="progress-bar" id= "progress-bar" role="progressbar" style="width: 0%;">25%</div>
+      </div>
+      <div class="card-body" id="endScreen" style="display: none;">
+          <div class="text-center">Quiz beendet!
+          </div>
+
+         
+
+          <div class="text-center">
+          Du hast <b id="correctAnswers">XXX</b> Fragen von <b id="amountOfQuestions">XXX</b> Fragen richtig beantwortet
+        </div>
+        <div class="button-row">
+        <button class="btn btn-primary" onclick="newGame()">Erneut spielen</button>
+      </div>
+
+      </div>
+
+      <div class="card-body" id="questionBody">
+        <h5 class="card-title" id="questiontext">Frage</h5>
+
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+          <div class="card-body" id="answer_1">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+          <div class="card-body" id="answer_2">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+          <div class="card-body" id="answer_3">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+          <div class="card-body" id="answer_4">
+            Antwort
+          </div>
+        </div>
+
+        <div class="question-footer">
+          <span>
+            <b id="question-number"> 1 </b> von <b id="total-questions"></b> Fragen
+          </span>
+          <button class="btn btn-primary" id="next-button" disabled onclick="nextQuestion()">Nächste Frage</button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
 </body>
+
 </html>

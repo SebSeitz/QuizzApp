@@ -1,0 +1,66 @@
+body {
+    background-color: #2b69cc !important;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.quiz-card {
+    width: 25rem;
+}
+
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.bg-success, .bg-danger{
+    color: white;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+.brain-image img{
+    object-fit: none;
+    display: flex;
+    width: 100%;
+}
+
+.scale-down{
+    object-fit: scale-down;
+}
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media(max-width: 420px) {
+    .card-title {
+        font-size: 17px;
+    } 
+    .card-body{
+        font-size: 14px;
+    }
+    .container {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+}
